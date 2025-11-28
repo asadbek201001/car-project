@@ -93,6 +93,7 @@ const NavItem = styled(Link)`
   padding: 8px 6px;
   transition: color 120ms ease, opacity 120ms ease;
   cursor: pointer;
+  white-space: nowrap;
 
   &.active {
     font-weight: 700;
