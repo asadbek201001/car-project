@@ -19,7 +19,6 @@ export default function Header() {
         <Nav>
           <NavItem to={ROUTES.HOME}>Home</NavItem>
           <NavItem to={ROUTES.VEHICLES}>Vehicles</NavItem>
-          <NavItem to="/details">Details</NavItem>
           <NavItem to={ROUTES.ABOUT}>About Us</NavItem>
           <NavItem to={ROUTES.CONTACT}>Contact Us</NavItem>
         </Nav>
