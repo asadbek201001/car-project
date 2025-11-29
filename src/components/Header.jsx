@@ -19,7 +19,6 @@ export default function Header() {
         <Nav>
           <NavItem to={ROUTES.HOME}>Home</NavItem>
           <NavItem to={ROUTES.VEHICLES}>Vehicles</NavItem>
-          <NavItem to="/details">Details</NavItem>
           <NavItem to={ROUTES.ABOUT}>About Us</NavItem>
           <NavItem to={ROUTES.CONTACT}>Contact Us</NavItem>
         </Nav>
@@ -73,7 +72,7 @@ const LogoText = styled.span`
 /* Navigation */
 const Nav = styled.nav`
   display: flex;
-  gap: 50px;
+
   align-items: center;
   position: absolute;
   left: 50%;
@@ -89,6 +88,7 @@ const NavItem = styled(Link)`
   text-decoration: none;
   color: #000;
   font-size: 18px;
+  width:110px;
   font-weight: 500;
   padding: 8px 6px;
   transition: color 120ms ease, opacity 120ms ease;

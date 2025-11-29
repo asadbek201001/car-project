@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 //components
 import Header from "../components/Header";
-
+import Footer from "../components/RealFooter";
 
 //images
 import Video from "../assets/video.png";
@@ -585,6 +585,9 @@ export default function About() {
                         </PhoneMockupSecond>
 
                     </DownloadCtn>
+
+
+                    <Footer />
 
 
 
