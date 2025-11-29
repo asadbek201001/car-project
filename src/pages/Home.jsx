@@ -20,6 +20,14 @@ const HomeContainer = styled.div`
   font-family: Arial, Helvetica, sans-serif;
 `;
 
+const PageWrapper = styled.div`
+  width: 1296px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 const CarCard1 = styled.div`
   width: 1296px;
   height: 660px;
@@ -147,69 +155,69 @@ export default function Home() {
   return (
     <>
       <HomeContainer>
-        <Header />
+        <PageWrapper>
+          <Header />
 
-        <CarCard1>
-          <CarCard2>
-            <CardText>
-              Experience the road <br /> like never before
-            </CardText>
-          <p>
-  <p>Aliquam adipiscing velit semper morbi. Purus non eu</p>
-  <p>cursus porttitor tristique et gravida. Quis nunc interdum</p>
-  <p>gravida ullamcorper</p>
-</p>
+          <CarCard1>
+            <CarCard2>
+              <CardText>
+                Experience the road <br /> like never before
+              </CardText>
+            <p>
+    <p>Aliquam adipiscing velit semper morbi. Purus non eu</p>
+    <p>cursus porttitor tristique et gravida. Quis nunc interdum</p>
+    <p>gravida ullamcorper</p>
+  </p>
 
-            <Button1>View all cars</Button1>
-          </CarCard2>
+              <Button1>View all cars</Button1>
+            </CarCard2>
 
-          <CarCard3>
-            <h2>Book your car</h2>
+            <CarCard3>
+              <h2>Book your car</h2>
 
-            <InputCtn>
-              <SelectBox>
-                <option>Car type</option>
-                <option>Sedan</option>
-                <option>SUV</option>
-                <option>Sport</option>
-                <option>Electric</option>
-              </SelectBox>
+              <InputCtn>
+                <SelectBox>
+                  <option>Car type</option>
+                  <option>Sedan</option>
+                  <option>SUV</option>
+                  <option>Sport</option>
+                  <option>Electric</option>
+                </SelectBox>
 
-              <SelectBox>
-                <option>Place of rental</option>
-                <option>Sedan</option>
-                <option>SUV</option>
-                <option>Sport</option>
-                <option>Electric</option>
-              </SelectBox>
+                <SelectBox>
+                  <option>Place of rental</option>
+                  <option>Sedan</option>
+                  <option>SUV</option>
+                  <option>Sport</option>
+                  <option>Electric</option>
+                </SelectBox>
 
-              <SelectBox>
-                <option>Place of return</option>
-                <option>Sedan</option>
-                <option>SUV</option>
-                <option>Sport</option>
-                <option>Electric</option>
-              </SelectBox>
+                <SelectBox>
+                  <option>Place of return</option>
+                  <option>Sedan</option>
+                  <option>SUV</option>
+                  <option>Sport</option>
+                  <option>Electric</option>
+                </SelectBox>
 
-               <DateBox>
-                <option>Return date</option>
-                <option>Sedan</option>
-                <option>SUV</option>
-                <option>Sport</option>
-                <option>Electric</option>
-              </DateBox>
+                 <DateBox>
+                  <option>Return date</option>
+                  <option>Sedan</option>
+                  <option>SUV</option>
+                  <option>Sport</option>
+                  <option>Electric</option>
+                </DateBox>
 
-              <button>Book now</button>
+                <button>Book now</button>
 
-              </InputCtn>
-          </CarCard3>
-        </CarCard1>
-       
+                </InputCtn>
+            </CarCard3>
+          </CarCard1>
+          <AfterCarDiv />
+          <Card />
+          <Footer /> 
+        </PageWrapper>
         </HomeContainer>
-        <AfterCarDiv />
-        <Card />
-        <Footer /> 
-
              
            
       

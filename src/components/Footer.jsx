@@ -35,26 +35,30 @@ const HeroContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 100px;
+  gap: 60px;
 `;
 
 const BigContainer = styled.div`
-  width: 1440px;
+  width: 100%;
+  max-width: 1296px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
   flex-direction: column;
 `;
 
 const CompanionContainer = styled.div`
   width: 1296px;
-  height: 415px;  
+  height: 415px;
   background-color: #5937e0;
   border-radius: 40px;
-  margin-left:90px;
   display: flex;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 0 40px;
 `;
 
 const CompanionContainer2 = styled.div`
@@ -62,13 +66,12 @@ const CompanionContainer2 = styled.div`
   height: 486px;
   background-color: #5937e0;
   border-radius: 40px;
-  margin-left: 80px;
   padding: 60px 40px;
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: center;
-  gap: 30px;
+  gap: 20px;
 
   background-image: url(${CarrImg});
   background-repeat: no-repeat;
@@ -95,7 +98,6 @@ const Img = styled.img`
   width: 500px;
   height: auto;
   margin-bottom: 10px;
-  margin-left: 90px;
 `;
 
 const DownloadText = styled.h2`
@@ -215,16 +217,16 @@ const GooglePlayy = styled.img`
 const CarImg = styled.img`
   width: 380px;
   height: 380px;
-  margin-top: 30px;
-  margin-right: 80px;
+  margin-top: 0;
+  margin-right: 0;
 `;
 
 const EnjoyContainer = styled.div`
-  margin-top: 50px;
-  margin-left: 80px;
   width: 900px;
-  height: 299px;
   padding: 17px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const CityWrapper = styled.div`
