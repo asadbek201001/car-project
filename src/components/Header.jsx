@@ -73,7 +73,7 @@ const LogoText = styled.span`
 /* Navigation */
 const Nav = styled.nav`
   display: flex;
-  gap: 50px;
+
   align-items: center;
   position: absolute;
   left: 50%;
@@ -89,6 +89,7 @@ const NavItem = styled(Link)`
   text-decoration: none;
   color: #000;
   font-size: 18px;
+  width:110px;
   font-weight: 500;
   padding: 8px 6px;
   transition: color 120ms ease, opacity 120ms ease;

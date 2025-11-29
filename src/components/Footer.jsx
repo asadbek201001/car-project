@@ -1,5 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import RealFooter from "./RealFooter";
+
+
+
+
+
 import IphoneIMage from "../assets/photo_2025-11-24_22-50-42.jpg";
 import AppStore from "../assets/AppStore.png";
 import GooglePlay from "../assets/GooglePlay.png";
@@ -7,6 +13,11 @@ import CarImage from "../assets/car.png";
 import MailImg from "../assets/mail.png";
 import AdresImg from "../assets/adress.png";
 import PhoneImg from "../assets/phone.png";
+import CarrImg from "../assets/carr.png";
+import IconCar from "../assets/IconCar.png";
+import KalendarImg from "../assets/KalendarImg.png";
+import KontaktImg from "../assets/KontaktImg.png";
+import SpeedImg from "../assets/SpeedPng.png";
 
 
 import { IoCarSport } from "react-icons/io5";
@@ -38,11 +49,46 @@ const BigContainer = styled.div`
 
 const CompanionContainer = styled.div`
   width: 1296px;
-  height: 415px;
+  height: 415px;  
   background-color: #5937e0;
   border-radius: 40px;
+  margin-left:90px;
   display: flex;
   align-items: flex-start;
+`;
+
+const CompanionContainer2 = styled.div`
+  width: 1296px;
+  height: 486px;
+  background-color: #5937e0;
+  border-radius: 40px;
+  margin-left: 80px;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  gap: 30px;
+
+  background-image: url(${CarrImg});
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 700px;
+  
+  opacity: 1;
+`;
+
+
+
+
+const CompanionContainer3 = styled.div`
+ 
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  
+
 `;
 
 const Img = styled.img`
@@ -73,6 +119,19 @@ const DownloadTextt = styled.h2`
   flex-direction: column;
 `;
 
+const DownloadTextt2 = styled.h2`
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 110%;
+  margin-bottom: 50px;
+  
+  color: white;
+  
+
+  display: flex;
+  flex-direction: column;
+`;
+
 const InfoText = styled.p`
   font-size: 18px;
   font-weight: 400;
@@ -90,6 +149,25 @@ const InfoTextt = styled.p`
   color: #ffffff;
 `;
 
+
+const InfoTextt1 = styled.p`
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 150%;
+  max-width: 790px;
+  color: #ffffff;
+`;
+
+
+const InfoText1 = styled.p`
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 10px;
+  line-height: 90%;
+  margin-left: 240px;
+  max-width: 590px;
+  color: #ffffff;
+`;
 const InfoContainer = styled.div`
   width: 590px;
   display: flex;
@@ -182,156 +260,79 @@ const CityButton = styled.button`
   cursor: pointer;
 `;
 
-const FooterWrapper = styled.footer`
-  width: 100%;
-  background: #ffffff;
-  padding: 70px 0;
-  margin-top: 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
 
-const FooterContent = styled.div`
-  width: 1400px;
+
+
+const BtnContainers = styled.div`
   display: flex;
   justify-content: space-between;
-  color: #000000;
-`;
-
-const Column = styled.div`
-  max-width: 300px;
-  margin-left: 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-`;
-
-const Column1 = styled.div`
-  max-width: 300px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-`;
-
-const Column2 = styled.div`
-  max-width: 300px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-`;
-
-const Column3 = styled.div`
-  max-width: 300px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-right:80px;
-`;
-
-const Title = styled.h3`
-  font-size: 20px;
-  font-weight: 700;
-  color: #000000;
-`;
-
-const TextSmall = styled.p`
-  font-size: 18px;
-  line-height: 26px;
-  font-weight: 500;
-  margin-top: 10px;
-  color: #000000;
-`;
-
-const List = styled.ul`
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-`;
-
-const Item = styled.li`
-  font-size: 15px;
-  cursor: pointer;
-`;
-
-const AppButtons = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-`;
-
-const SocialRow = styled.div`
-  display: flex;
-  gap: 12px;
-  margin-top: 10px;
-`;
-
-const IconCircle = styled.div`
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: #efefef;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  cursor: pointer;
-`;
-
-const ContactRow = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 15px;
-`;
-
-const FooterBottom = styled.div`
+  gap: 20px;
   width: 100%;
-  text-align: center;
   margin-top: 40px;
+`;
+
+const StatCard = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: white;
+  border-radius: 16px;
+  padding: 20px 28px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  width: 240px;
+  height:100px;
+  max-width: 260px;
+`;
+
+const IconBox = styled.div`
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const StatText = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const StatNumber = styled.h3`
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+`;
+
+const StatLabel = styled.p`
+  margin: 0;
   font-size: 14px;
-  color: #000;
-  opacity: 0.6;
+  color: #666;
 `;
 
-const LogoArea = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 700;
-  color: #000;
+
+
+const IconImg1 = styled.img`
+  width: 58px;
+  height: 58px;
 `;
 
-const LogoText = styled.span`
-  font-size: 17px;
-  font-weight: 700;
+const IconImg2 = styled.img`
+  width: 58px;
+  height: 58px;
 `;
 
-const LogoIcon = styled.div`
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #000;
-`;
+const IconImg3 = styled.img`
+  width: 58px;
+  height: 58px;
+`;  
 
-const BitaContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width:100%;
-  gap: 50px;
-`;
+const IconImg4 = styled.img`
+  width: 58px;
+  height: 58px; 
+`;  
 
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-`;
   
 
 
@@ -339,6 +340,55 @@ export default function Footer() {
   return (
     <>
       <BigContainer>
+
+        <CompanionContainer2>
+          <CompanionContainer3>
+          <DownloadTextt2>
+            Facts in numbers
+          </DownloadTextt2>
+         
+          <InfoTextt1>
+            Amet cras hac orci lacus. Faucibus ipsum arcu lectus nibh sapien  bibendum ullamcorper <br />
+          <InfoText1>in. Diam tincidunt tincidunt erat</InfoText1> 
+          </InfoTextt1>
+          </CompanionContainer3>
+
+          <BtnContainers>
+  <StatCard>
+    <IconBox><IconImg1 src={IconCar} /></IconBox>
+    <StatText>
+      <StatNumber>540+</StatNumber>
+      <StatLabel>Cars</StatLabel>
+    </StatText>
+  </StatCard>
+
+  <StatCard>
+    <IconBox><IconImg2 src={KontaktImg} /></IconBox>
+    <StatText>
+      <StatNumber>20k+</StatNumber>
+      <StatLabel>Customers</StatLabel>
+    </StatText>
+  </StatCard>
+
+  <StatCard>
+    <IconBox><IconImg3 src={KalendarImg} /></IconBox>  
+    <StatText>
+      <StatNumber>25+</StatNumber>
+      <StatLabel>Years</StatLabel>
+    </StatText>
+  </StatCard>
+
+  <StatCard>
+    <IconBox><IconImg4 src={SpeedImg} /></IconBox>
+    <StatText>
+      <StatNumber>20m+</StatNumber>
+      <StatLabel>Miles</StatLabel>
+    </StatText>
+  </StatCard>
+</BtnContainers>
+
+        
+            </CompanionContainer2>
         <HeroContainer>
           <MainContainer>
             <DownloadText>
@@ -363,6 +413,8 @@ export default function Footer() {
           <Img src={IphoneIMage} />
         </HeroContainer>
 
+
+        
         <CompanionContainer>
           <EnjoyContainer>
             <DownloadTextt>
@@ -388,96 +440,9 @@ export default function Footer() {
         </CompanionContainer>
       </BigContainer>
 
-      <FooterWrapper>
-        <FooterContent>
-          <Column>
-          <BitaContainer>
-  <LogoArea>
-              <LogoIcon>
-                <IoCarSport size={40} />
-              </LogoIcon>
-              <LogoText>Car Rental</LogoText>
-            </LogoArea>
-            <LogoArea>
-          
-         
-        
+      <RealFooter />
 
-            </LogoArea>
-
-            
-          </BitaContainer>
-          
-
-            <TextSmall>
-              Faucibus faucibus pellentesque dictum turpis. Id pellentesque
-              turpis massa a id iaculis lorem.
-            </TextSmall>
-
-            <SocialRow>
-              <IconCircle>
-                <FaFacebookF size={16} />
-              </IconCircle>
-              <IconCircle>
-                <FaInstagram size={16} />
-              </IconCircle>
-              <IconCircle>
-                <FaTwitter size={16} />
-              </IconCircle>
-              <IconCircle>
-                <FaYoutube size={16} />
-              </IconCircle>
-            </SocialRow>
-          </Column>
-
-          <Column1>
-           
-           <Container> <AdresIcon src={AdresImg} /> Oxford Ave. Cary, NC 27511</Container> 
-
-            <Title>Useful Links</Title>
-            <List>
-              <Item>About us</Item>
-              <Item>Contact us</Item>
-              <Item>Gallery</Item>
-              <Item>Blog</Item>
-              <Item>F.A.Q</Item>
-            </List>
-          </Column1>
-
-          <Column2>
-
-          <ContactRow>
-    <MailIcon src={MailImg} />
-    <span>nobody@gmail.com</span>
-  </ContactRow>
-            <Title>Vehicles</Title>
-            <List>
-              <Item>Sedan</Item>
-              <Item>Cabriolet</Item>
-              <Item>Pickup</Item>
-              <Item>Minivan</Item>
-              <Item>SUV</Item>
-            </List>
-          </Column2>
-
-          <Column3>
-            <ContactRow>
-    <PhoneIcon src={PhoneImg} />
-    <span>+998987654321</span>
-  </ContactRow>
-            <Title>Download App</Title>
-
-           
-
-            <AppButtons>
-              <ApStore src={AppStore} />
-              <GooglePlayy src={GooglePlay} />
-            </AppButtons>
-          </Column3>
-        </FooterContent>
-
-        <FooterBottom>© Copyright Car Rental 2024.</FooterBottom>
-      </FooterWrapper>
+     
     </>
   );
 }
