@@ -241,18 +241,6 @@ export default function Home() {
           <Footer /> 
         </PageWrapper>
         </HomeContainer>
-<<<<<<< HEAD
-        <AfterCarDiv />
-         <CradHeader>
-        <h1>Choose the car that <br/> suits you</h1>
-       
-        <a href="/vehicles">View All →</a>
-      </CradHeader>
-        <Card />
-        <Footer />
-
-=======
->>>>>>> 89b4511df9931c16b2cb13eaa0496ab0e415bc11
              
            
       
