@@ -32,113 +32,174 @@ const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 60px;
+  @media (max-width: 900px) {
+    width: 100%;
+    padding: 0 2vw;
+  }
 `;
 
 
 const AboutCtn = styled.div`
-width: 100%;
-height: 300px;
-display: flex;
-align-content: center;
-justify-content: center;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
   align-items: center;
   text-align: center;
-gap: 10px;
-flex-direction: column;
-
-h1 {
+  gap: 10px;
+  flex-direction: column;
+  h1 {
     font-size: 50px;
-}
-h3 {
+    @media (max-width: 900px) {
+      font-size: 32px;
+    }
+  }
+  h3 {
     font-weight: 400;
     color: #7c7c7c;
-}
-strong {
+  }
+  strong {
     font-weight: 600;
-}
-.breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.breadcrumb h3,
-.breadcrumb strong {
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-}
+  }
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .breadcrumb h3,
+  .breadcrumb strong {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+  }
+  @media (max-width: 900px) {
+    height: auto;
+    padding: 30px 0 10px 0;
+  }
 `;
 
 const WhereCtn = styled.div`
-width: 100%;
-height: 350px;
-display: flex;
-align-items: center;
-justify-content: space-evenly;
-
+  width: 100%;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  @media (max-width: 900px) {
+    flex-direction: column;
+    height: auto;
+    gap: 30px;
+    align-items: stretch;
+  }
 `;
 
 const WhereCtnText = styled.div`
-width: 350px;
-height: 300px;
-display: flex;
-flex-direction: column;
-gap: 18px;
-h2 {
+  width: 350px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  h2 {
     font-weight: 600;
-}
-h1 {
+  }
+  h1 {
     font-weight: 650;
     font-size: 45px;
-}
-p {
+    @media (max-width: 900px) {
+      font-size: 28px;
+    }
+  }
+  p {
     font-weight: 300;
-}
+  }
+  @media (max-width: 900px) {
+    width: 100%;
+    height: auto;
+    text-align: left;
+    align-items: flex-start;
+  }
 `;
 
 
 
 const ImageCtn = styled.div`
-
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+    @media (min-width: 901px) {
+      width: 960px;
+      max-width: 960px;
+    }
+  }
 `;
 
 const KCtn = styled.div`
-width: 100%;
-height: 300px;
-display: flex;
-align-items: center;
-justify-content: space-evenly;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  @media (max-width: 900px) {
+    flex-direction: column;
+    height: auto;
+    gap: 30px;
+    align-items: stretch;
+  }
 `;
 
 const KCtnText = styled.div`
-width: 300px;
-height: 200px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-h1 {
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h1 {
     font-size: 55px;
     color: #5937E0;
-}
-h2 {
+    @media (max-width: 900px) {
+      font-size: 36px;
+    }
+  }
+  h2 {
     font-weight: 500;
-}
-
+  }
+  @media (max-width: 900px) {
+    width: 100%;
+    height: auto;
+    align-items: flex-start;
+    text-align: left;
+  }
 `;
 
 
 const AfterK = styled.div`
-width: 100%;
-height: 669px;
-display: flex;
-align-items: center;
-justify-content: space-between;
+  width: 100%;
+  height: 669px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media (max-width: 900px) {
+    flex-direction: column;
+    height: auto;
+    gap: 30px;
+    align-items: stretch;
+  }
 `;
 
 const LeftImage = styled.div`
   img {
     width: 520px;
     border-radius: 20px;
+    @media (max-width: 900px) {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
   }
 `;
 
@@ -147,6 +208,11 @@ const RightList = styled.div`
   flex-direction: column;
   gap: 35px;
   width: 480px;
+  @media (max-width: 900px) {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
 `;
 
 const Item = styled.div`
@@ -198,12 +264,27 @@ const DownloadCtn = styled.div`
   justify-content: space-evenly;
   position: relative;
   overflow: hidden;
+  @media (max-width: 900px) {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 30px;
+    border-radius: 20px;
+    margin-top: 40px;
+    padding: 36px 0 36px 0;
+  }
 `;
 
 const PhoneMockup = styled.div`
   img {
     width: 290px;
     transform: translateY(-40px);
+    @media (max-width: 900px) {
+      width: 180px;
+      transform: none;
+      display: block;
+      margin: 0 auto 18px auto;
+    }
   }
 `;
 
@@ -211,6 +292,12 @@ const PhoneMockupSecond = styled.div`
   img {
     width: 360px;
     transform: translateY(-10px);
+    @media (max-width: 900px) {
+      width: 220px;
+      transform: none;
+      display: block;
+      margin: 0 auto 0 auto;
+    }
   }
 `;
 
@@ -220,21 +307,27 @@ const DownloadText = styled.div`
   display: flex;
   flex-direction: column;
   gap: 18px;
-
   span {
     font-size: 14px;
     opacity: 0.8;
   }
-
   h1 {
     font-size: 45px;
     font-weight: 700;
+    @media (max-width: 900px) {
+      font-size: 28px;
+    }
   }
-
   p {
     font-size: 15px;
     opacity: 0.8;
     line-height: 1.5;
+  }
+  @media (max-width: 900px) {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    padding: 0 10px;
   }
 `;
 
@@ -269,6 +362,12 @@ const ReviewsCards = styled.div`
   gap: 25px;
   width: 100%;
   justify-content: space-between;
+  @media (max-width: 900px) {
+    flex-direction: column;
+    gap: 22px;
+    width: 100%;
+    align-items: center;
+  }
 `;
 
 const ReviewCard = styled.div`
@@ -319,6 +418,11 @@ const FAQContainer = styled.div`
   flex-direction: column;
   gap: 20px;
   font-family: Arial, Helvetica, sans-serif;
+  @media (max-width: 900px) {
+    width: 90%;
+    margin: 50px auto;
+    gap: 14px;
+  }
 `;
 
 const FAQTitle = styled.h1`
@@ -586,8 +690,8 @@ export default function About() {
 
                     </DownloadCtn>
 
-
-                    <Footer />
+{/* 
+                    <Footer /> */}
 
 
 
