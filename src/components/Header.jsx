@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { FiPhoneCall } from "react-icons/fi";
 import { IoCarSport } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import ROUTES from "../routes/routes";
+
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <Wrapper>
       <Container>
@@ -16,14 +27,21 @@ export default function Header() {
             <LogoText>Car Rental</LogoText>
         </LogoArea>
 
-        <Nav>
-          <NavItem to={ROUTES.HOME}>Home</NavItem>
-          <NavItem to={ROUTES.VEHICLES}>Vehicles</NavItem>
-          <NavItem to={ROUTES.ABOUT}>About Us</NavItem>
-          <NavItem to={ROUTES.CONTACT}>Contact Us</NavItem>
+        <Nav menuOpen={menuOpen}>
+          <NavItem onClick={closeMenu} to={ROUTES.HOME}>Home</NavItem>
+          <NavItem onClick={closeMenu} to={ROUTES.VEHICLES}>Vehicles</NavItem>
+          <NavItem onClick={closeMenu} to={ROUTES.ABOUT}>About Us</NavItem>
+          <NavItem onClick={closeMenu} to={ROUTES.CONTACT}>Contact Us</NavItem>
         </Nav>
 
+        <Hamburger onClick={toggleMenu} aria-label="Toggle menu" aria-expanded={menuOpen}>
+          <Bar />
+          <Bar />
+          <Bar />
+        </Hamburger>
+
       
+        {/* Remove HelpArea on screens smaller than 900px */}
         <HelpArea>
           <IconWrap>
             <FiPhoneCall size={22} />
@@ -42,6 +60,10 @@ const Wrapper = styled.header`
   background: #fff;
   
   padding: 20px 0;
+
+  @media (max-width: 600px) {
+    padding: 12px 0;
+  }
 `;
 
 const Container = styled.div`
@@ -52,6 +74,10 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 600px) {
+    padding: 0 12px;
+  }
 `;
 
 /* Logo */
@@ -62,25 +88,47 @@ const LogoArea = styled.div`
   font-weight: 700;
   color: #000;
   
+  @media (max-width: 600px) {
+    gap: 6px;
+  }
 `;
 
 const LogoText = styled.span`
   font-size: 17px;
   font-weight: 700;
+
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
 `;
 
 /* Navigation */
 const Nav = styled.nav`
   display: flex;
-
   align-items: center;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  flex: 1;
+  transform: none;
+  transition: max-height 0.4s ease, padding 0.4s ease;
 
   @media (max-width: 900px) {
-    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: ${({ menuOpen }) => (menuOpen ? "20px" : "0 20px")};
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    max-height: ${({ menuOpen }) => (menuOpen ? "300px" : "0")};
+    overflow: hidden;
+    z-index: 999;
+  }
+
+  @media (max-width: 600px) {
+    top: 60px;
+    padding: ${({ menuOpen }) => (menuOpen ? "12px" : "0 12px")};
+    max-height: ${({ menuOpen }) => (menuOpen ? "260px" : "0")};
   }
 `;
 
@@ -88,7 +136,7 @@ const NavItem = styled(Link)`
   text-decoration: none;
   color: #000;
   font-size: 18px;
-  width:110px;
+  width: 110px;
   font-weight: 500;
   padding: 8px 6px;
   transition: color 120ms ease, opacity 120ms ease;
@@ -103,6 +151,50 @@ const NavItem = styled(Link)`
     color: #5c2dee;
     opacity: 0.9;
   }
+
+  @media (max-width: 900px) {
+    width: 100%;
+    padding: 12px 0;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 16px;
+    padding: 10px 0;
+  }
+`;
+
+/* Hamburger menu */
+const Hamburger = styled.button`
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1000;
+
+  @media (max-width: 900px) {
+    display: flex;
+  }
+
+  @media (max-width: 600px) {
+    width: 20px;
+    height: 16px;
+  }
+`;
+
+const Bar = styled.span`
+  display: block;
+  height: 3px;
+  background-color: #000;
+  border-radius: 2px;
+
+  @media (max-width: 600px) {
+    height: 2.5px;
+  }
 `;
 
 /* Right side help */
@@ -110,6 +202,10 @@ const HelpArea = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
 
 const IconWrap = styled.div`
@@ -120,6 +216,10 @@ const IconWrap = styled.div`
   align-items: center;
   justify-content: center;
   color: white;
+
+  @media (max-width: 600px) {
+    padding: 8px;
+  }
 `;
 
 const LogoIcon = styled.div`
@@ -131,6 +231,11 @@ const LogoIcon = styled.div`
   border-radius: 50%;
   background: transparent;
   color: #000;
+
+  @media (max-width: 600px) {
+    width: 40px;
+    height: 40px;
+  }
 `;
 
 const HelpText = styled.div`
@@ -146,5 +251,13 @@ const HelpText = styled.div`
   strong {
     font-weight: 700;
     font-size: 15px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 12px;
+
+    strong {
+      font-size: 13px;
+    }
   }
 `;

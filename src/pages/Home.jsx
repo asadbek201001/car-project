@@ -26,16 +26,41 @@ const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
+
+  @media (max-width: 900px) {
+    width: 90%;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    padding: 10px;
+  }
 `;
 
 const CarCard1 = styled.div`
   width: 1296px;
   height: 660px;
-  background-color: #5937E0;
+  background-color: #5937e0;
   border-radius: 40px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  padding: 40px;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    padding: 30px;
+    gap: 30px;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
 `;
 
 const CarCard2 = styled.div`
@@ -44,6 +69,20 @@ const CarCard2 = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 40px;
+  max-width: 50%;
+
+  @media (max-width: 900px) {
+    max-width: 100%;
+    width: 100%;
+    gap: 30px;
+    align-items: center;
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    gap: 20px;
+  }
 `;
 
 const CarCard3 = styled.div`
@@ -56,10 +95,50 @@ const CarCard3 = styled.div`
   justify-content: center;
   flex-direction: column;
   gap: 30px;
+  padding: 30px;
+
+  @media (max-width: 900px) {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    gap: 25px;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    padding: 15px;
+    gap: 20px;
+  }
+
+  h2 {
+    font-size: 28px;
+
+    @media (max-width: 900px) {
+      font-size: 24px;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 20px;
+    }
+  }
+
+  select,
+  input,
+  button {
+    width: 100%;
+  }
 `;
 
 const CardText = styled.h1`
   font-size: 60px;
+
+  @media (max-width: 900px) {
+    font-size: 42px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 32px;
+  }
 `;
 const Button1 = styled.button`
   width: 150px;
@@ -76,10 +155,23 @@ const Button1 = styled.button`
   position: relative;
   z-index: 10;
   color: white;
+  font-size: 16px;
 
   &:hover {
     background-color: #ff8707;
     cursor: pointer;
+  }
+
+  @media (max-width: 900px) {
+    width: 130px;
+    height: 38px;
+    font-size: 14px;
+  }
+
+  @media (max-width: 600px) {
+    width: 120px;
+    height: 36px;
+    font-size: 13px;
   }
 `;
 
@@ -96,6 +188,16 @@ const SelectBox = styled.select`
   background-image: url("data:image/svg+xml;utf8,<svg width='16' height='16' xmlns='http://www.w3.org/2000/svg'><path d='M4 6l4 4 4-4' stroke='black' fill='none' stroke-width='2' stroke-linecap='round'/></svg>");
   background-repeat: no-repeat;
   background-position: right 15px center;
+
+  @media (max-width: 900px) {
+    font-size: 14px;
+    height: 40px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 13px;
+    height: 36px;
+  }
 `;
 
 const DateBox = styled.select`
@@ -112,6 +214,16 @@ const DateBox = styled.select`
   background-repeat: no-repeat;
   background-position: right 15px center;
   background-size: 16px 16px;
+
+  @media (max-width: 900px) {
+    font-size: 14px;
+    height: 40px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 13px;
+    height: 36px;
+  }
 `;
 
 const InputCtn = styled.div`
@@ -131,6 +243,16 @@ const InputCtn = styled.div`
     height: 12%;
     padding-left: 10px;
     color: black;
+
+    @media (max-width: 900px) {
+      height: 40px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      height: 36px;
+      font-size: 13px;
+    }
   }
 
   button {
@@ -142,13 +264,33 @@ const InputCtn = styled.div`
     color: white;
     font-size: 17px;
     transition: 0.3s;
-  position: relative;
-  z-index: 10;
+    position: relative;
+    z-index: 10;
 
-  &:hover {
-    background-color: #ff8707;
-    cursor: pointer;
+    &:hover {
+      background-color: #ff8707;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      height: 40px;
+      font-size: 15px;
+    }
+
+    @media (max-width: 600px) {
+      height: 36px;
+      font-size: 14px;
+    }
   }
+
+  @media (max-width: 900px) {
+    width: 100%;
+    height: auto;
+    gap: 12px;
+  }
+
+  @media (max-width: 600px) {
+    gap: 10px;
   }
 `;
 const CradHeader = styled.div`
@@ -171,6 +313,26 @@ const CradHeader = styled.div`
     margin-top: 35px;
     &:hover {
       text-decoration: underline;
+    }
+  }
+
+  @media (max-width: 900px) {
+    padding: 0 20px;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 0 10px;
+
+    h2 {
+      font-size: 20px;
+    }
+
+    a {
+      font-size: 16px;
+      margin-top: 0;
     }
   }
 `;
@@ -237,8 +399,8 @@ export default function Home() {
             </CarCard3>
           </CarCard1>
           <AfterCarDiv />
-          <Card />
-          <Footer /> 
+          {/* <Card />
+          <Footer />  */}
         </PageWrapper>
         </HomeContainer>
              
