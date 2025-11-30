@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
-import BlurImg from "../assets/Blurcar.png";
+import BlurImg from "../assets/BlurCar.png";
 import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaClock } from "react-icons/fa";
 import ImgSection1 from "../assets/ImageSection.png";
 import ImgSection2 from "../assets/ImageSection2.png";
