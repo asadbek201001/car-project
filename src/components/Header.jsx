@@ -168,28 +168,28 @@ const Hamburger = styled.button`
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 25px;
-  height: 20px;
+  width: 40px;
+  height: 30px;
   background: transparent;
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 1000;
+  z-index: 2000;
 
   @media (max-width: 900px) {
     display: flex;
   }
 
   @media (max-width: 600px) {
-    width: 20px;
-    height: 16px;
+    width: 35px;
+    height: 25px;
   }
 `;
 
 const Bar = styled.span`
   display: block;
   height: 3px;
-  background-color: #000;
+  background-color: #5c2dee;
   border-radius: 2px;
 
   @media (max-width: 600px) {
