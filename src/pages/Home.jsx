@@ -151,6 +151,29 @@ const InputCtn = styled.div`
   }
   }
 `;
+const CradHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 100px;
+
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  a {
+    font-size: 20px;
+    color:#111;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 35px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`;
 export default function Home() {
   return (
     <>

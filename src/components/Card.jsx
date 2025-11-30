@@ -74,13 +74,6 @@ function Card({ name, type, price, img }) {
 export default function CarList() {
   return (
     <Container>
-      <Header>
-        <h1>Choose the car that <br/> suits you</h1>
-       
-        <a href="/vehicles">View All →</a>
-      </Header>
-      <br />
-      <br />
       <Grid>
         {cars.map((car, index) => (
           <Card key={index} {...car} />
@@ -95,28 +88,7 @@ const Container = styled.div`
   padding: 100px;
 `;
 
-const Header = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
 
-  h2 {
-    font-size: 24px;
-    font-weight: 600;
-  }
-
-  a {
-    font-size: 20px;
-    color:#111;
-    text-decoration: none;
-    font-weight: 600;
-    margin-top: 35px;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-`;
 
 const Grid = styled.div`
   display: grid;
