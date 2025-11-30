@@ -7,7 +7,7 @@ import Footer from "../components/RealFooter";
 
 //images
 import Video from "../assets/video.png";
-import SImg from "../assets/img.png";
+import SImg from "../assets/Img.png";
 import Phone from "../assets/phone2.png";
 import AppStore from "../assets/AppStore.png";
 import GooglePlay from "../assets/GooglePlay.png";
