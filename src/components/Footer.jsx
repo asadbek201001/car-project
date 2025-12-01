@@ -29,7 +29,7 @@ const HeroContainer = styled.div`
   margin-top: 50px;
   width: 100%;
   background-color: #ffffff;
-  padding: 20px;
+  padding: 20px 20px 20px 0;
   font-size: 14px;
   color: #ffffff;
   display: flex;
@@ -41,6 +41,7 @@ const HeroContainer = styled.div`
     flex-direction: column;
     text-align: center;
     gap: 30px;
+    padding: 20px 10px 20px 10px;
   }
 `;
 
@@ -53,10 +54,16 @@ const BigContainer = styled.div`
   align-items: center;
   gap: 10px;
   flex-direction: column;
+  padding: 0 15px;
+
+  @media (max-width: 900px) {
+    padding: 0 10px;
+  }
 `;
 
 const CompanionContainer = styled.div`
-  width: 1296px;
+  width: 100%;
+  max-width: 1296px;
   height: 415px;
   background-color: #5937e0;
   border-radius: 40px;
@@ -65,18 +72,21 @@ const CompanionContainer = styled.div`
   align-items: center;
   gap: 40px;
   padding: 0 40px;
+  box-sizing: border-box;
 
   @media (max-width: 900px) {
     width: 100%;
     height: auto;
     flex-direction: column;
-    padding: 20px;
+    padding: 20px 20px 40px 20px;
     gap: 20px;
+    border-radius: 20px;
   }
 `;
 
 const CompanionContainer2 = styled.div`
-  width: 1296px;
+  width: 100%;
+  max-width: 1296px;
   height: 486px;
   background-color: #5937e0;
   border-radius: 40px;
@@ -86,6 +96,7 @@ const CompanionContainer2 = styled.div`
   align-content: center;
   justify-content: center;
   gap: 20px;
+  box-sizing: border-box;
 
   background-image: url(${CarrImg});
   background-repeat: no-repeat;
@@ -99,6 +110,12 @@ const CompanionContainer2 = styled.div`
     height: auto;
     background-size: 350px;
     padding: 40px 20px;
+    border-radius: 20px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 30px 15px;
+    background-size: 250px;
   }
 `;
 
@@ -106,13 +123,18 @@ const CompanionContainer2 = styled.div`
 
 
 const CompanionContainer3 = styled.div`
- 
-
   display: flex;
   align-items: center;
   flex-direction: column;
-  
+  width: 100%;
+  max-width: 790px;
+  margin: 0 auto;
+  padding: 0 10px;
 
+  @media (max-width: 600px) {
+    max-width: 100%;
+    padding: 0 5px;
+  }
 `;
 
 const Img = styled.img`
@@ -122,6 +144,11 @@ const Img = styled.img`
 
   @media (max-width: 900px) {
     width: 90%;
+    margin: 0 auto 10px auto;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
   }
 `;
 
@@ -147,6 +174,7 @@ const DownloadText = styled.h2`
     line-height: 120%;
     width: 100%;
     text-align: center;
+    margin-right: 0;
   }
 `;
 
@@ -186,6 +214,11 @@ const DownloadTextt2 = styled.h2`
     text-align: center;
     align-items: center;
   }
+
+  @media (max-width: 600px) {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
 `;
 
 const InfoText = styled.p`
@@ -202,11 +235,13 @@ const InfoText = styled.p`
     text-align: center;
     line-height: 1.5;
     margin-top: 15px;
+    padding: 0 10px;
   }
 
   @media (max-width: 600px) {
     font-size: 14px;
     line-height: 1.4;
+    padding: 0 5px;
   }
 `;
 const InfoTextt = styled.p`
@@ -219,6 +254,7 @@ const InfoTextt = styled.p`
 
   @media (max-width: 900px) {
     text-align: center;
+    padding: 0 10px;
   }
 
   @media (max-width: 600px) {
@@ -226,6 +262,7 @@ const InfoTextt = styled.p`
     line-height: 150%;
     width: 100%;
     text-align: center;
+    padding: 0 5px;
   }
 `;
 
@@ -236,9 +273,15 @@ const InfoTextt1 = styled.p`
   line-height: 150%;
   max-width: 790px;
   color: #ffffff;
+  margin: 0 auto;
 
   @media (max-width: 900px) {
     text-align: center;
+    padding: 0 10px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 0 5px;
   }
 `;
 
@@ -248,13 +291,22 @@ const InfoText1 = styled.p`
   font-weight: 400;
   margin-top: 10px;
   line-height: 90%;
-  margin-left: 240px;
   max-width: 590px;
   color: #ffffff;
+  margin-left: 0;
+
+  @media (min-width: 901px) {
+    margin-left: 240px;
+  }
 
   @media (max-width: 900px) {
     text-align: center;
     margin-left: 0;
+    padding: 0 10px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 0 5px;
   }
 `;
 const InfoContainer = styled.div`
@@ -269,6 +321,7 @@ const InfoContainer = styled.div`
     justify-content: center;
     align-items: center;
     gap: 20px;
+    padding: 0 10px;
   }
 `;
 
@@ -285,6 +338,8 @@ const MainContainer = styled.div`
     margin-left: 0;
     text-align: center;
     gap: 10px;
+    width: 100%;
+    padding: 0 10px;
   }
 `;
 
@@ -296,7 +351,14 @@ const ApStore = styled.img`
 
   @media (max-width: 900px) {
     margin-top: 10px;
-    margin-right: 0;
+    margin-right: 10px;
+    width: 130px;
+  }
+
+  @media (max-width: 600px) {
+    width: 120px;
+    margin-top: 8px;
+    margin-right: 8px;
   }
 `;
 
@@ -323,6 +385,12 @@ const GooglePlayy = styled.img`
   @media (max-width: 900px) {
     margin-top: 10px;
     margin-right: 0;
+    width: 130px;
+  }
+
+  @media (max-width: 600px) {
+    width: 120px;
+    margin-top: 8px;
   }
 `;
 
@@ -331,6 +399,16 @@ const CarImg = styled.img`
   height: 380px;
   margin-top: 0;
   margin-right: 0;
+
+  @media (max-width: 900px) {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const EnjoyContainer = styled.div`
@@ -344,10 +422,11 @@ const EnjoyContainer = styled.div`
     width: 100%;
     text-align: center;
     align-items: center;
+    padding: 17px 10px;
   }
 
   @media (max-width: 600px) {
-    padding: 10px;
+    padding: 10px 5px;
     width: 100%;
   }
 `;
@@ -357,8 +436,16 @@ const CityWrapper = styled.div`
   width: 464px;
   margin-top: 40px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 900px) {
     width: 100%;
+    max-width: 464px;
+    margin: 30px auto 0 auto;
+    padding: 0 10px;
+  }
+
+  @media (max-width: 600px) {
+    max-width: 100%;
+    padding: 0 5px;
   }
 `;
 
@@ -371,6 +458,7 @@ const CityInput = styled.input`
   font-size: 18px;
   background-color: #ffffff;
   color: #555;
+  box-sizing: border-box;
 `;
 
 const CityButton = styled.button`
@@ -387,6 +475,12 @@ const CityButton = styled.button`
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
+
+  @media (max-width: 600px) {
+    width: 110px;
+    height: 40px;
+    font-size: 16px;
+  }
 `;
 
 
@@ -399,10 +493,17 @@ const BtnContainers = styled.div`
   gap: 20px;
   width: 100%;
   margin-top: 40px;
+  flex-wrap: wrap;
 
   @media (max-width: 900px) {
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+  }
+
+  @media (max-width: 600px) {
+    gap: 10px;
   }
 `;
 
@@ -415,8 +516,15 @@ const StatCard = styled.div`
   padding: 20px 28px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
   width: 240px;
-  height:100px;
+  height: 100px;
   max-width: 260px;
+
+  @media (max-width: 600px) {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 15px 20px;
+  }
 `;
 
 const IconBox = styled.div`
@@ -437,12 +545,20 @@ const StatNumber = styled.h3`
   font-size: 24px;
   font-weight: 700;
   margin: 0;
+
+  @media (max-width: 600px) {
+    font-size: 20px;
+  }
 `;
 
 const StatLabel = styled.p`
   margin: 0;
   font-size: 14px;
   color: #666;
+
+  @media (max-width: 600px) {
+    font-size: 12px;
+  }
 `;
 
 
@@ -547,7 +663,7 @@ export default function Footer() {
           <EnjoyContainer>
             <DownloadTextt>
               Enjoy every mile with
-              <span style={{ display: "flex", gap: "10px" }}>
+              <span style={{ display: "flex", gap: "10px", flexWrap: "wrap", justifyContent: "center" }}>
                 <span>adorable</span>
                 <span>companionship</span>
               </span>
