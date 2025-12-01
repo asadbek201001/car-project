@@ -38,6 +38,10 @@ const InfoSection = styled.div`
   }
 `;
 
+const Space = styled.div`
+height: 50px;
+`;
+
 const InfoItem = styled.div`
   display: flex;
   align-items: center;
@@ -723,6 +727,7 @@ export default function Contact() {
 
         <CarImageBlur src={BlurImg} />
       </MainContainer>
+      <Space />
 
       <InfoSection>
         <InfoItem>
