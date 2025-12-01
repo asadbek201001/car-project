@@ -191,16 +191,24 @@ const DownloadTextt2 = styled.h2`
 const InfoText = styled.p`
   font-size: 18px;
   font-weight: 400;
-  line-height: 150%;
+  line-height: 1.6;
   max-width: 590px;
   color: #625a5a;
+  margin-top: 20px;
 
   @media (max-width: 900px) {
+    font-size: 16px;
+    max-width: 100%;
     text-align: center;
-    width: 100%;
+    line-height: 1.5;
+    margin-top: 15px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 14px;
+    line-height: 1.4;
   }
 `;
-
 const InfoTextt = styled.p`
   font-size: 18px;
   font-weight: 400;
@@ -520,13 +528,7 @@ export default function Footer() {
             <DownloadText>
               Download <br /> Mobile App
               <InfoContainer>
-                <InfoText>
-                  Imperdiet ut tristique viverra nunc. Ultrices orci vel auctor
-                  cursus <br />
-                  turpis nibh placerat massa. Fermentum urna ut at et in. Turpis
-                  aliquet cras hendrerit enim condimentum. Condimentum interdum
-                  risus bibendum urna.
-                </InfoText>
+  
               </InfoContainer>
             </DownloadText>
 
