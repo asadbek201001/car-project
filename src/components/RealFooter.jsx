@@ -35,6 +35,12 @@ const FooterWrapper = styled.footer`
   flex-direction: column;
   align-items: center;
   gap:80px;
+
+  @media (max-width: 900px) {
+    width: 100%;
+    height: auto;
+    padding: 40px 20px;
+  }
   
 `;
 
@@ -46,6 +52,15 @@ const FooterContent = styled.div`
   justify-content: space-between;
   color: #000000;
   gap:100px;
+
+  @media (max-width: 900px) {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
   
 `;
 
@@ -55,6 +70,12 @@ const Column = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  @media (max-width: 900px) {
+    margin-left: 0;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const Column1 = styled.div`
@@ -62,6 +83,11 @@ const Column1 = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
+
+  @media (max-width: 900px) {
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const Column2 = styled.div`
@@ -69,6 +95,11 @@ const Column2 = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
+
+  @media (max-width: 900px) {
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const Column3 = styled.div`
@@ -77,6 +108,12 @@ const Column3 = styled.div`
   flex-direction: column;
   gap: 20px;
   margin-right:60px;
+
+  @media (max-width: 900px) {
+    margin-right: 0;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const Title = styled.h3`
@@ -91,6 +128,10 @@ const TextSmall = styled.p`
   font-weight: 500;
   margin-top: 10px;
   color: #000000;
+
+  @media (max-width: 900px) {
+    text-align: center;
+  }
 `;
 
 const List = styled.ul`
@@ -116,6 +157,10 @@ const SocialRow = styled.div`
   display: flex;
   gap: 12px;
   margin-top: 10px;
+
+  @media (max-width: 900px) {
+    justify-content: center;
+  }
 `;
 
 const IconCircle = styled.div`
@@ -143,6 +188,10 @@ const FooterBottom = styled.div`
   font-size: 14px;
   color: #000;
   opacity: 0.6;
+
+  @media (max-width: 900px) {
+    font-size: 12px;
+  }
 `;
 
 const LogoArea = styled.div`
@@ -178,6 +227,12 @@ const BitaContainer = styled.div`
   justify-content: space-between;
   width:100%;
   gap: 50px;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+  }
   
 `;
 
@@ -186,6 +241,10 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
+
+  @media (max-width: 900px) {
+    justify-content: center;
+  }
 `;
 
 
@@ -314,5 +373,3 @@ export default function RealFooter(){
           </FooterWrapper>
   );
 }
-
-

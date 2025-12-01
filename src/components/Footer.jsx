@@ -36,6 +36,12 @@ const HeroContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 60px;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
 `;
 
 const BigContainer = styled.div`
@@ -59,6 +65,14 @@ const CompanionContainer = styled.div`
   align-items: center;
   gap: 40px;
   padding: 0 40px;
+
+  @media (max-width: 900px) {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
 `;
 
 const CompanionContainer2 = styled.div`
@@ -79,6 +93,13 @@ const CompanionContainer2 = styled.div`
   background-size: 700px;
   
   opacity: 1;
+
+  @media (max-width: 900px) {
+    width: 100%;
+    height: auto;
+    background-size: 350px;
+    padding: 40px 20px;
+  }
 `;
 
 
@@ -98,6 +119,10 @@ const Img = styled.img`
   width: 500px;
   height: auto;
   margin-bottom: 10px;
+
+  @media (max-width: 900px) {
+    width: 90%;
+  }
 `;
 
 const DownloadText = styled.h2`
@@ -109,6 +134,20 @@ const DownloadText = styled.h2`
   margin-right: 200px;
   margin-bottom: 20px;
   text-align: left;
+
+  @media (max-width: 900px) {
+    width: 100%;
+    margin-right: 0;
+    font-size: 40px;
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 32px;
+    line-height: 120%;
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 const DownloadTextt = styled.h2`
@@ -119,6 +158,16 @@ const DownloadTextt = styled.h2`
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 900px) {
+    text-align: center;
+    align-items: center;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 32px;
+    line-height: 120%;
+  }
 `;
 
 const DownloadTextt2 = styled.h2`
@@ -132,6 +181,11 @@ const DownloadTextt2 = styled.h2`
 
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 900px) {
+    text-align: center;
+    align-items: center;
+  }
 `;
 
 const InfoText = styled.p`
@@ -140,6 +194,11 @@ const InfoText = styled.p`
   line-height: 150%;
   max-width: 590px;
   color: #625a5a;
+
+  @media (max-width: 900px) {
+    text-align: center;
+    width: 100%;
+  }
 `;
 
 const InfoTextt = styled.p`
@@ -149,6 +208,17 @@ const InfoTextt = styled.p`
   line-height: 150%;
   max-width: 590px;
   color: #ffffff;
+
+  @media (max-width: 900px) {
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 16px;
+    line-height: 150%;
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 
@@ -158,6 +228,10 @@ const InfoTextt1 = styled.p`
   line-height: 150%;
   max-width: 790px;
   color: #ffffff;
+
+  @media (max-width: 900px) {
+    text-align: center;
+  }
 `;
 
 
@@ -169,12 +243,25 @@ const InfoText1 = styled.p`
   margin-left: 240px;
   max-width: 590px;
   color: #ffffff;
+
+  @media (max-width: 900px) {
+    text-align: center;
+    margin-left: 0;
+  }
 `;
 const InfoContainer = styled.div`
   width: 590px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+
+  @media (max-width: 900px) {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
 `;
 
 const MainContainer = styled.div`
@@ -184,6 +271,13 @@ const MainContainer = styled.div`
   width: 590px;
   height: auto;
   margin-left: 70px;
+
+  @media (max-width: 900px) {
+    align-items: center;
+    margin-left: 0;
+    text-align: center;
+    gap: 10px;
+  }
 `;
 
 const ApStore = styled.img`
@@ -191,6 +285,11 @@ const ApStore = styled.img`
   height: auto;
   margin-top: 30px;
   margin-right: 20px;
+
+  @media (max-width: 900px) {
+    margin-top: 10px;
+    margin-right: 0;
+  }
 `;
 
 const MailIcon = styled.img`
@@ -212,6 +311,11 @@ const GooglePlayy = styled.img`
   width: 150px;
   height: auto;
   margin-top: 30px;
+
+  @media (max-width: 900px) {
+    margin-top: 10px;
+    margin-right: 0;
+  }
 `;
 
 const CarImg = styled.img`
@@ -227,12 +331,27 @@ const EnjoyContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media (max-width: 900px) {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  @media (max-width: 600px) {
+    padding: 10px;
+    width: 100%;
+  }
 `;
 
 const CityWrapper = styled.div`
   position: relative;
   width: 464px;
   margin-top: 40px;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const CityInput = styled.input`
@@ -272,6 +391,11 @@ const BtnContainers = styled.div`
   gap: 20px;
   width: 100%;
   margin-top: 40px;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    gap: 20px;
+  }
 `;
 
 const StatCard = styled.div`
