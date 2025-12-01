@@ -6,16 +6,26 @@ import styled from "styled-components";
 import Header from "../components/Header";
 import Footer from "../components/RealFooter";
 import { cars } from "../pages/Vehicles";
+import { useNavigate } from "react-router-dom";
+export const carss = [
+  { id: 1, name: "Mercedes C-Class", type: "Sedan", price: 25, img: "https://incognito.be/wp-content/uploads/2015/11/visual-web-02-1.png" },
+  { id: 2, name: "Mercedes S-Class", type: "Sport", price: 50, img: "https://incognito.be/wp-content/uploads/2015/11/s-klasse4-300x164.png" },
+  { id: 3, name: "Mercedes E-Class", type: "Sedan", price: 45, img: "https://incognito.be/wp-content/uploads/2016/05/visual-web-03-300x172.png" },
+  { id: 4, name: "Porsche Cayenne", type: "SUV", price: 40, img: "https://cdn.imagin.studio/s/7sl1LpslP9JIcodV_DcvoRZynwz9Lzu6RGmDSPc-PLZDbpdN9jklvV91lULnKWy-SmyRHOM1OKBIb5EH_jUutkdBlUz6NhzuEjbFM_41B7ZHVZVP9D936ho20kz8Pi-_fWa0SPI0PoZIaO5R_C0voUX919kiVZy-2X3X9TbU6OLdSVJ1b9md49VtmnU_nEy7uW3SEQqNqeucNaptF9jYTtkqadROjaH_1X8mdTK4uP6FJaGhStTsktEfZYhOrfDC8RGqgWOM_d7Vea5hS8CgvtkUhkkj_Px6qW2LJVvY4OvVYZpJE3jUuthZzhlT2fD26T3OcHKdqekL1ZoZG-jQ5RhspxAfjNTm6X26bT64ZL71fYoYH8ik6tkhzhkDnMyXuGinBB-c7I79EdZ1P9Gcksl9um0_kMy62DWudQvY0ObZ7a5VV9g4zo046kVS1KA" },
+  { id: 5, name: "Porsche Panamera", type: "Sedan", price: 35, img: "https://www.pngplay.com/wp-content/uploads/15/Black-Porsche-Background-PNG-Image.png" },
+  { id: 6, name: "Porsche Macan", type: "SUV", price: 50, img: "https://d2qldpouxvc097.cloudfront.net/image-by-path?bucket=a5-gallery-serverless-prod-chromebucket-1iz9ffi08lwxm&key=429129%2Ffront34%2Flg" },
+];
+
+
 
 export default function ViewDetails() {
-  const { id } = useParams();
+  const { id } = useParams();   // id ni URL dan olamiz
+  const navigate = useNavigate();
   const car = cars.find(c => c.id === Number(id));
-  
-useEffect(() => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}, []);
 
-
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [id]);
 
   if (!car) return <h1>Car Not Found</h1>;
 
@@ -71,17 +81,20 @@ useEffect(() => {
       {/* OTHER CARS SECTION */}
       <OtherCarsContainer>
         <OtherTitle>Other cars</OtherTitle>
+<Grid>
+  {cars.slice(0, 6).map(item => (
+    <Card key={item.id}>
+      <CarImg src={item.img} />
+      <CarName>{item.name}</CarName>
+      <CarPrice>${item.price} / day</CarPrice>
 
-        <Grid>
-          {cars.slice(0, 6).map(item => (
-            <Card key={item.id}>
-              <CarImg src={item.img} />
-              <CarName>{item.name}</CarName>
-              <CarPrice>${item.price} / day</CarPrice>
-              <Btn>View Details</Btn>
-            </Card>
-          ))}
-        </Grid>
+      <Btn  onClick={() => navigate(`/details/${item.id}`)}>
+        View Details
+      </Btn>
+    </Card>
+  ))}
+</Grid>
+
       </OtherCarsContainer>
 
       <Footer />
@@ -90,30 +103,51 @@ useEffect(() => {
 }
 
 /* --------------------- STYLES --------------------- */
+/* --------------------- STYLES --------------------- */
 
 const Container = styled.div`
   width: 100%;
   padding: 40px 160px;
   display: flex;
   justify-content: space-between;
+  gap: 40px;
+
+  @media(max-width:1300px){
+    padding: 40px 80px;
+  }
 
   @media(max-width:1200px){
     padding: 40px;
     flex-direction: column;
+    align-items: center;
   }
 `;
 
-const Left = styled.div``;
+const Left = styled.div`
+  max-width: 600px;
+
+  @media(max-width:600px){
+    width: 100%;
+  }
+`;
 
 const Title = styled.h2`
   font-size: 32px;
   font-weight: 600;
+
+  @media(max-width:600px){
+    font-size: 26px;
+  }
 `;
 
 const Price = styled.span`
   color: #5a3ffb;
   font-size: 26px;
   margin-left: 10px;
+
+  @media(max-width:600px){
+    font-size: 22px;
+  }
 
   span {
     font-size: 18px;
@@ -123,14 +157,17 @@ const Price = styled.span`
 
 const MainCarImg = styled.img`
   width: 520px;
+  max-width: 100%;
   margin-top: 20px;
   opacity: 0.8;
+  border-radius: 12px;
 `;
 
 const Thumbnails = styled.div`
   display: flex;
   margin-top: 20px;
-  gap: 14px;
+  gap: 12px;
+  flex-wrap: wrap;
 `;
 
 const Thumb = styled.img`
@@ -138,17 +175,29 @@ const Thumb = styled.img`
   height: 70px;
   border-radius: 12px;
   object-fit: cover;
-  opacity: 0.9;
+
+  @media(max-width:500px){
+    width: 31%;
+    height: 60px;
+  }
 `;
 
 const Right = styled.div`
   width: 430px;
+
+  @media(max-width:1200px){
+    width: 100%;
+  }
 `;
 
 const SectionTitle = styled.h3`
   margin-top: 20px;
   font-size: 22px;
   margin-bottom: 12px;
+
+  @media(max-width:600px){
+    font-size: 19px;
+  }
 `;
 
 const SpecsBox = styled.div`
@@ -158,6 +207,10 @@ const SpecsBox = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
+
+  @media(max-width:600px){
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const SpecItem = styled.div`
@@ -214,6 +267,10 @@ const Dot = styled.div`
 const OtherCarsContainer = styled.div`
   padding: 40px 160px;
 
+  @media(max-width:1300px){
+    padding: 40px 80px;
+  }
+
   @media(max-width:1200px){
     padding: 40px;
   }
@@ -223,6 +280,10 @@ const OtherTitle = styled.h2`
   margin-bottom: 20px;
   font-size: 28px;
   font-weight: 600;
+
+  @media(max-width:600px){
+    font-size: 24px;
+  }
 `;
 
 const Grid = styled.div`
@@ -233,6 +294,7 @@ const Grid = styled.div`
   @media(max-width:900px){
     grid-template-columns: repeat(2,1fr);
   }
+
   @media(max-width:600px){
     grid-template-columns: 1fr;
   }

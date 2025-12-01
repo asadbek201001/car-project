@@ -399,8 +399,8 @@ export default function Home() {
             </CarCard3>
           </CarCard1>
           <AfterCarDiv />
-          {/* <Card />
-          <Footer />  */}
+           <Card />
+          <Footer />
         </PageWrapper>
         </HomeContainer>
              
