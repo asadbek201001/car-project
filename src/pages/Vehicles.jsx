@@ -100,24 +100,213 @@ export default function Vehicles() {
 }
 
 // Styled Components (qisqa qilib keltirdim, asl kod bilan almashtirish mumkin)
-const Title = styled.h2`text-align:center;margin-top:40px;font-size:28px;font-weight:600;`;
-const FilterWrapper = styled.div`margin-top:30px;display:flex;justify-content:center;gap:18px;flex-wrap:wrap;`;
-const FilterButton = styled.button`position:relative;padding:12px 28px;border-radius:30px;border:none;cursor:pointer;font-size:16px;font-weight:500;transition:0.2s ease;background:${props => props.active ? "#5937E0" : "#eaeaea"};color:${props => props.active ? "#fff" : "#000"};&:hover{background:${props => props.active ? "#5937E0" : "#d5d5d5"}}`;
-const ActiveLine = styled.div`position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:50%;height:3px;background:#fff;border-radius:2px;`;
-const Container = styled.div`width:100%;display:flex;align-items:center;gap:20px;flex-direction:column;background-color:#fff;font-family:Arial, Helvetica, sans-serif;`;
-const Grid = styled.div`display:grid;grid-template-columns:repeat(3,1fr);gap:20px;@media(max-width:1024px){grid-template-columns:repeat(2,1fr);}@media(max-width:768px){grid-template-columns:1fr;}`;
-const CardBox = styled.div`background:#f1f1f1;width:416px;height:513px;border-radius:20px;padding:24px;&:hover{box-shadow:0 6px 20px rgba(0,0,0,0.1);}`;
-const ImageWrapper = styled.div`background:#f1f1f1;display:flex;justify-content:center;align-items:center;width:368px;height:240px;img{height:100%;opacity:0.6;}`;
-const TopRow = styled.div`margin-top:16px;display:flex;justify-content:space-between;width:368px;height:51px;h3{font-size:20px;font-weight:600;}`;
-const Price = styled.span`color:#5a3ffb;font-weight:700;`;
-const Type = styled.p`font-size:14px;color:#777;margin-bottom:14px;`;
-const Specs = styled.div`display:flex;justify-content:space-between;margin-bottom:20px;width:368px;svg{font-size:16px;}`;
-const Spec = styled.span`display:flex;align-items:center;gap:4px;font-size:14px;color:#666;`;
-const Button = styled.button`background:#5937E0;width:100%;height:50px;margin-top:40px;font-size:16px;color:#fff;border:none;border-radius:15px;&:hover{background:#472dd7;}`;
-const Hyundai = styled.img`width:82px;height:54px;`;
-const Ford = styled.img`width:115px;height:44px;`;
-const Mers = styled.img`width:55px;height:54px;`;
-const Jeep = styled.img`width:109px;height:44px;`;
-const Bmw = styled.img`width:55px;height:54px;`;
-const Audi = styled.img`width:124px;height:42px;`;
-const MainContainer3 = styled.div`width:1305px;height:174px;display:flex;padding:60px 40px;border-radius:40px;background-color:rgba(250,250,250,1);justify-content:center;gap:100px;align-items:center;text-align:center;`;
+
+/* ===================== RESPONSIVE STYLES ===================== */
+
+const Title = styled.h2`
+  text-align: center;
+  margin-top: 40px;
+  font-size: 28px;
+  font-weight: 600;
+
+  @media (max-width: 768px) {
+    font-size: 22px;
+    margin-top: 25px;
+  }
+`;
+
+const FilterWrapper = styled.div`
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 0 10px;
+`;
+
+const FilterButton = styled.button`
+  position: relative;
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.2s ease;
+  background: ${props => props.active ? "#5937E0" : "#eaeaea"};
+  color: ${props => props.active ? "#fff" : "#000"};
+
+  @media (max-width: 480px) {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+`;
+
+const ActiveLine = styled.div`
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+`;
+
+const Container = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 0 15px;
+`;
+
+/* -------- GRID RESPONSIVE -------- */
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  @media(max-width: 1280px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media(max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+/* -------- CARD -------- */
+
+const CardBox = styled.div`
+  background: #f1f1f1;
+  width: 100%;
+  max-width: 416px;
+  border-radius: 20px;
+  padding: 24px;
+  transition: 0.3s ease;
+
+  &:hover { 
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1); 
+  }
+
+  @media (max-width: 768px) {
+    padding: 18px;
+  }
+`;
+
+const ImageWrapper = styled.div`
+  background:#f1f1f1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  height:240px;
+
+  img { 
+    max-width: 90%;
+    max-height: 100%;
+    object-fit: contain;
+    opacity:0.6; 
+  }
+
+  @media (max-width: 480px) {
+    height: 190px;
+  }
+`;
+
+const TopRow = styled.div`
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  h3 { font-size: 20px; font-weight: 600; }
+
+  @media (max-width: 480px) {
+    h3 { font-size: 18px; }
+  }
+`;
+
+const Price = styled.span`
+  color:#5a3ffb;
+  font-weight:700;
+`;
+
+const Type = styled.p`
+  font-size:14px;
+  color:#777;
+  margin-bottom:14px;
+`;
+
+const Specs = styled.div`
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:20px;
+  width:100%;
+`;
+
+const Spec = styled.span`
+  display:flex;
+  align-items:center;
+  gap:4px;
+  font-size:14px;
+  color:#666;
+
+  @media (max-width: 480px) { font-size: 12px; }
+`;
+
+const Button = styled.button`
+  background:#5937E0;
+  width:100%;
+  height:50px;
+  margin-top:40px;
+  font-size:16px;
+  color:#fff;
+  border:none;
+  border-radius:15px;
+  transition: 0.2s ease;
+
+  &:hover{ background:#472dd7; }
+
+  @media(max-width:480px) { 
+    height: 45px;
+    font-size: 14px; 
+  }
+`;
+
+/* -------- LOGO SECTION RESPONSIVE -------- */
+
+const MainContainer3 = styled.div`
+  width: 100%;
+  max-width: 1305px;
+  height: auto;
+  display: flex;
+  padding: 50px 20px;
+  border-radius: 40px;
+  background-color: rgba(250, 250, 250, 1);
+  justify-content: center;
+  gap: 80px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+
+  @media(max-width: 768px) {
+    gap: 40px;
+    padding: 30px 10px;
+  }
+
+  @media(max-width: 480px) {
+    gap: 25px;
+  }
+`;
+
+/* Logos auto shrink */
+const Hyundai = styled.img`width:82px;height:54px;object-fit:contain;`;
+const Ford = styled.img`width:115px;height:44px;object-fit:contain;`;
+const Mers = styled.img`width:55px;height:54px;object-fit:contain;`;
+const Jeep = styled.img`width:109px;height:44px;object-fit:contain;`;
+const Bmw = styled.img`width:55px;height:54px;object-fit:contain;`;
+const Audi = styled.img`width:124px;height:42px;object-fit:contain;`;
