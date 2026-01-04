@@ -341,7 +341,6 @@ export default function RealFooter(){
     
               <ContactRow>
         <MailIcon src={MailImg} />
-        <span>nobody@gmail.com</span>
       </ContactRow>
                 <Title>Vehicles</Title>
                 <List>
@@ -356,7 +355,6 @@ export default function RealFooter(){
               <Column3>
                 <ContactRow>
         <PhoneIcon src={PhoneImg} />
-        <span>+998987654321</span>
       </ContactRow>
                 <Title>Download App</Title>
     
